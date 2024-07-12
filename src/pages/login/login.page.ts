@@ -1,0 +1,54 @@
+import { AuthService } from "$lib/services/auth.service";
+import { ChangeDetectionStrategy, Component, inject, type OnInit } from "@angular/core";
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+
+@Component({
+    selector: "page-login",
+    standalone: true,
+    imports: [ReactiveFormsModule],
+    templateUrl: "./login.page.html",
+    styleUrl: "./login.page.scss",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class LoginPage implements OnInit {
+    private readonly router = inject(Router);
+    private readonly authService = inject(AuthService);
+
+    form = new FormGroup({
+        username: new FormControl<string | null>(
+            {
+                value: null,
+                disabled: false,
+            },
+            [Validators.required]
+        ),
+        password: new FormControl<string | null>(
+            {
+                value: null,
+                disabled: false,
+            },
+            [Validators.required]
+        ),
+    });
+
+    ngOnInit(): void {
+        if (this.authService.loggedIn()) {
+            this.router.navigateByUrl("/profile");
+        }
+    }
+
+    handleSubmit() {
+        const { username, password } = this.form.value;
+        if (this.form.valid && username && password) {
+            const result = this.authService.login(username, password);
+            if (result) {
+                this.router.navigateByUrl("/profile");
+                return;
+            }
+
+            this.form.setErrors({ invalid: true });
+            return;
+        }
+    }
+}

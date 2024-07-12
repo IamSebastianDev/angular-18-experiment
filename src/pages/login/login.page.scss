@@ -1,0 +1,79 @@
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    padding: 1rem;
+    border: 1px solid #26262a;
+    border-radius: 1px;
+
+    &.ng-untouched,
+    &.ng-valid {
+        & .form-error {
+            display: none;
+        }
+    }
+
+    &:not(:focus-within).ng-invalid.ng-touched,
+    &.ng-submitted.ng-invalid {
+        & .form-error {
+            display: inline;
+        }
+    }
+
+    & .form-error {
+        display: inline;
+        color: firebrick;
+        font-size: 0.825rem;
+    }
+
+    & .text-input {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        & span {
+            width: 30%;
+        }
+
+        & input {
+            flex-grow: 1;
+            padding: 0.5rem 0;
+            background: none;
+            border: none;
+            border-block: 1px solid transparent;
+            border-bottom-color: #26262a;
+            color: inherit;
+
+            &.ng-invalid.ng-touched {
+                border-bottom-color: firebrick;
+            }
+        }
+    }
+
+    & button {
+        padding: 0.5rem 0;
+        color: inherit;
+        background: none;
+        border: 1px solid #26262a;
+        border-radius: 1px;
+        font-weight: 500;
+
+        &:hover {
+            background: darkseagreen;
+            color: #26262a;
+            cursor: pointer;
+        }
+    }
+}
