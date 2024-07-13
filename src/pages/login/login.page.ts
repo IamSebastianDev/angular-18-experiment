@@ -1,40 +1,43 @@
-import { AuthService } from "$lib/services/auth.service";
-import { ChangeDetectionStrategy, Component, inject, type OnInit } from "@angular/core";
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
+import { ButtonComponent } from '$components/button/button.component';
+import { AuthService } from '$lib/services/auth.service';
+import { ChangeDetectionStrategy, Component, inject, type OnInit } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: "page-login",
+    selector: 'page-login',
     standalone: true,
-    imports: [ReactiveFormsModule],
-    templateUrl: "./login.page.html",
-    styleUrl: "./login.page.scss",
+    imports: [ReactiveFormsModule, ButtonComponent],
+    templateUrl: './login.page.html',
+    styleUrl: './login.page.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginPage implements OnInit {
     private readonly router = inject(Router);
     private readonly authService = inject(AuthService);
 
+    // Create the form
     form = new FormGroup({
         username: new FormControl<string | null>(
             {
                 value: null,
                 disabled: false,
             },
-            [Validators.required]
+            [Validators.required],
         ),
         password: new FormControl<string | null>(
             {
                 value: null,
                 disabled: false,
             },
-            [Validators.required]
+            [Validators.required],
         ),
     });
 
     ngOnInit(): void {
+        // If the user is already logged in, route him to the profile page
         if (this.authService.loggedIn()) {
-            this.router.navigateByUrl("/profile");
+            this.router.navigateByUrl('/profile');
         }
     }
 
@@ -43,7 +46,7 @@ export class LoginPage implements OnInit {
         if (this.form.valid && username && password) {
             const result = this.authService.login(username, password);
             if (result) {
-                this.router.navigateByUrl("/profile");
+                this.router.navigateByUrl('/profile');
                 return;
             }
 

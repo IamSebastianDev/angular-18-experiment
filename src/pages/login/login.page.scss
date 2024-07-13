@@ -61,19 +61,4 @@ section {
             }
         }
     }
-
-    & button {
-        padding: 0.5rem 0;
-        color: inherit;
-        background: none;
-        border: 1px solid #26262a;
-        border-radius: 1px;
-        font-weight: 500;
-
-        &:hover {
-            background: darkseagreen;
-            color: #26262a;
-            cursor: pointer;
-        }
-    }
 }

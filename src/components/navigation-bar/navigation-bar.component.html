@@ -7,14 +7,14 @@
         <li>
             <a class="navigation-link" [routerLink]="'/profile'">Profile</a>
         </li>
-        @if(isLoggedIn()) {
-        <li>
-            <a class="navigation-link" (click)="handleLogout()">Logout</a>
-        </li>
+        @if (isLoggedIn()) {
+            <li>
+                <a class="navigation-link" (click)="handleLogout()">Logout</a>
+            </li>
         } @else {
-        <li>
-            <a class="navigation-link" [routerLink]="'/login'">Login</a>
-        </li>
+            <li>
+                <a class="navigation-link" [routerLink]="'/login'">Login</a>
+            </li>
         }
     </ul>
 </nav>
