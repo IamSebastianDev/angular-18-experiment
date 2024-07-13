@@ -10,7 +10,8 @@
                     "inlineTemplate": false,
                     "inlineStyle": false,
                     "style": "scss",
-                    "skipTests": true
+                    "skipTests": true,
+                    "changeDetection": "OnPush"
                 },
                 "@schematics/angular:class": {
                     "skipTests": true
@@ -41,11 +42,11 @@
                 "build": {
                     "builder": "@angular/build:application",
                     "options": {
-                        "outputPath": "dist/default",
+                        "outputPath": "dist/",
                         "index": "./index.html",
                         "browser": "src/main.ts",
                         "polyfills": [],
-                        "tsConfig": "tsconfig.app.json",
+                        "tsConfig": "tsconfig.json",
                         "inlineStyleLanguage": "scss",
                         "assets": [
                             {

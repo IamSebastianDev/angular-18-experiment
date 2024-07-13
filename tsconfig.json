@@ -32,5 +32,7 @@
         "strictInputAccessModifiers": true,
         "strictTemplates": true,
         "_enabledBlockTypes": ["if", "for"]
-    }
+    },
+    "files": ["src/main.ts"],
+    "include": ["src/**/*.d.ts", "src/**/*.ts"]
 }
