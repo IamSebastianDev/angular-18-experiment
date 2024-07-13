@@ -1,30 +1,30 @@
 # More Functional Angular
 
-This repository contains an experiment to see if a modern (>=v18) Angular application can be structured similarly to other modern frameworks. The experiment heavily utilizes [Standalone Components](https://angular.dev/guide/components/importing#standalone-components), moving away from the typical `NgModule` structure and adopting a more modern architecture. The Angular style guide does not currently provide recommendations for Standalone Applications [(see here)](https://angular.dev/style-guide#app-root-module).
+This repository contains an experiment to determine if a modern (>=v18) Angular application can be structured similarly to other contemporary frameworks. The experiment heavily utilizes [Standalone Components](https://angular.dev/guide/components/importing#standalone-components), moving away from the typical `NgModule` structure and adopting a more modern architecture. The Angular style guide does not currently provide recommendations for Standalone Applications [(see here)](https://angular.dev/style-guide#app-root-module). This experiment aims to suggest a possible guideline.
 
 ## Experiments
 
 The repository includes the following features, experiments, and DX improvements:
 
--   Uses [Bun](https://bun.sh) as a package manager. (Unfortunately, Bun is not supported as runtime yet.)
--   Use prettier config to ensure correct formatting of new Angular Control Flow
--   Use modern Angular Control Flow
--   Utilizes modern Angular dev tools (EsBuild, Vite).
+-   Uses [Bun](https://bun.sh) as a package manager. (Unfortunately, Bun is not supported as a runtime yet.)
+-   Uses a Prettier configuration to ensure correct formatting of the new Angular Control Flow.
+-   Employs modern Angular Control Flow.
+-   Utilizes modern Angular development tools (EsBuild, Vite).
 -   Structures the application to align more closely with a typical Vite setup.
 -   Provides aliases for `./src/components`, `./src/pages`, `./src/lib`.
 -   Organizes files based on intended usage rather than modules.
 -   Employs only Standalone components, with no constructor injection and no use of the Angular Common Module.
--   Import necessary parts of Common module standalone (JSON Pipe)
+-   Imports necessary parts of the Common module standalone (e.g., JSON Pipe).
 -   Implements exclusively lazy-loaded routing.
 -   Removes Zone.js 🥳.
--   Slimed down Angular Boilerplate Files
+-   Slims down Angular boilerplate files.
 
-The repository features a small application demonstrating basic authentication, forms, http and routing flow.
+The repository features a small application demonstrating basic authentication, forms, HTTP, and routing flow.
 
 ## Testing Locally
 
-Clone the repository, install the dependencies using `bun install`, and use `bun dev` to start the application.
+To test locally, clone the repository, install the dependencies using `bun install`, and start the application with `bun dev`.
 
 ## Reasoning
 
-Angular has recently made strides to change the way a Angular Application is structured. There are a certain set of previous Injectable that have been converted to functional (Guards, Interceptors, ...) as well as Standalone Components, Pipes, Directives. All this allows to build a true Module Less Angular Application.
+Angular has recently made strides to change the way an Angular application is structured. Several previous Injectables have been converted to functional (e.g., Guards, Interceptors) along with Standalone Components, Pipes, and Directives. All these changes enable the creation of a truly module-less Angular application.
