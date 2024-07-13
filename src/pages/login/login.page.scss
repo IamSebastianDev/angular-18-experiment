@@ -14,7 +14,7 @@ section {
     gap: 0.5rem;
 
     padding: 1rem;
-    border: 1px solid #26262a;
+    border: 1px solid var(--c-grey);
     border-radius: 1px;
 
     &.ng-untouched,
@@ -53,7 +53,7 @@ section {
             background: none;
             border: none;
             border-block: 1px solid transparent;
-            border-bottom-color: #26262a;
+            border-bottom-color: var(--c-grey);
             color: inherit;
 
             &.ng-invalid.ng-touched {
