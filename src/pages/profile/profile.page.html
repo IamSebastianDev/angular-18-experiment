@@ -1,1 +1,18 @@
-<div class="container">This is a protected Page.</div>
+<div class="container">
+    <p>This is a protected Page.</p>
+    <button ui-button (click)="handleFetchData()">Fetch User Profile</button>
+    <div>
+        <h3>User:</h3>
+        @switch (true) {
+            @case (loading()) {
+                <pre>...Loading</pre>
+            }
+            @case (!!data()) {
+                <pre>{{ data() | json }} </pre>
+            }
+            @case (!data()) {
+                <pre>No data</pre>
+            }
+        }
+    </div>
+</div>
