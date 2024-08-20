@@ -11,7 +11,7 @@ The repository includes the following features, experiments, and DX improvements
 -   Employs modern Angular Control Flow.
 -   Utilizes modern Angular development tools (EsBuild, Vite).
 -   Structures the application to align more closely with a typical Vite setup.
--   Provides aliases for `./src/components`, `./src/pages`, `./src/lib`.
+-   Provides aliases for `./src/lib/components`, `./src/pages`, `./src/lib`.
 -   Organizes files based on intended usage rather than modules.
 -   Employs only Standalone components, with no constructor injection and no use of the Angular Common Module.
 -   Imports necessary parts of the Common module standalone (e.g., JSON Pipe).
