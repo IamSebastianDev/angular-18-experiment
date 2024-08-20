@@ -1,4 +1,4 @@
-import { ButtonComponent } from '$components/button/button.component';
+import { ButtonComponent } from '$lib/components/button/button.component';
 import { AuthService } from '$lib/services/auth.service';
 import { ChangeDetectionStrategy, Component, inject, type OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';

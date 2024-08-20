@@ -22,7 +22,7 @@
         "lib": ["ES2022", "dom"],
         "paths": {
             "$lib/*": ["src/lib/*"],
-            "$components/*": ["src/components/*"],
+            "$components/*": ["src/lib/components/*"],
             "$pages/*": ["src/pages/*"]
         }
     },
