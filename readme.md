@@ -18,6 +18,7 @@ The repository includes the following features, experiments, and DX improvements
 -   Implements exclusively lazy-loaded routing.
 -   Removes Zone.js 🥳.
 -   Slims down Angular boilerplate files.
+-   Uses [Valibot](https://valibot.dev) to create models and for typesafety checks
 
 The repository features a small application demonstrating basic authentication, forms, HTTP, and routing flow.
 
@@ -30,3 +31,23 @@ To test locally, clone the repository, install the dependencies using `bun insta
 Angular has recently made strides to change the way an Angular application is structured. Several previous Injectables have been converted to functional (e.g., Guards, Interceptors) along with Standalone Components, Pipes, and Directives. All these changes enable the creation of a truly module-less Angular application.
 
 ## Styleguide Propositions
+
+There are several propositions made in this repository:
+
+### 01. Only Standalone Components, Pipes, Directives
+
+Using standalone components removes the need for modules, sliming down the application structure quite a bit.
+
+### 02. Use `inject` instead of constructor injection
+
+Keeping the number of constructor injects zero or minimal enables us to easier extend classes if so desired. It also helps with type inference for the injects as well as just keeping the component clean and tidy.
+
+### 03. Use `loadChildren`/`loadComponent` over `children` and `component`
+
+This allows angular to more efficiently generate different bundles by utilizing bundle splitting. It also works great together with a module less application.
+
+### 04. Use signals for synchronous state management
+
+`Signals` can replace `RXJS` in many cases, where the data is synchronous. Using signals for asynchronous state is trickier, but you can still use `toSignal` to use a observable in a template.
+
+... more to come?
