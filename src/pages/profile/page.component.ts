@@ -1,15 +1,15 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { PageService } from './profile.service';
-import { User } from '../../lib/models/user.model';
-import { JsonPipe } from '@angular/common';
 import { ButtonComponent } from '$lib/components/button/button.component';
+import { JsonPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { delay, tap } from 'rxjs';
+import { User } from '../../lib/models/user.model';
+import { PageService } from './page.service';
 
 @Component({
     selector: 'page-profile',
     standalone: true,
     imports: [JsonPipe, ButtonComponent],
-    templateUrl: './profile.page.html',
+    templateUrl: './page.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfilePage {
@@ -31,6 +31,7 @@ export class ProfilePage {
             .subscribe({
                 next: (data) => this.data.set(data),
                 complete: () => this.loading.set(false),
+                error: () => this.loading.set(false),
             });
     }
 }

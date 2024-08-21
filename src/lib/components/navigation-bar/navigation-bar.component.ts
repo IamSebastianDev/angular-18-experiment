@@ -1,13 +1,13 @@
-import { AuthService } from "$lib/services/auth.service";
-import { ChangeDetectionStrategy, Component, computed, inject } from "@angular/core";
-import { Router, RouterModule } from "@angular/router";
+import { AuthService } from '$lib/services/auth.service';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
-    selector: "app-navigation-bar",
+    selector: 'app-navigation-bar',
     standalone: true,
     imports: [RouterModule],
-    templateUrl: "./navigation-bar.component.html",
-    styleUrl: "./navigation-bar.component.scss",
+    templateUrl: './navigation-bar.component.html',
+    styleUrl: './navigation-bar.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavigationBarComponent {
@@ -17,6 +17,6 @@ export class NavigationBarComponent {
 
     handleLogout() {
         this.authService.logout();
-        this.router.navigateByUrl("");
+        this.router.navigateByUrl('');
     }
 }

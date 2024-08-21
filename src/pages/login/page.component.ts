@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
     selector: 'page-login',
     standalone: true,
     imports: [ReactiveFormsModule, ButtonComponent],
-    templateUrl: './login.page.html',
-    styleUrl: './login.page.scss',
+    templateUrl: './page.component.html',
+    styleUrl: './page.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginPage implements OnInit {

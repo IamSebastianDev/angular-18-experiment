@@ -1,13 +1,17 @@
-import { Address } from "./address.model";
-import { Company } from "./company.model";
+import * as v from 'valibot';
+import { Address } from './address.model';
+import { Company } from './company.model';
+import { Email } from './types/email.type';
 
-export type User = {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
-    address: Address;
-    phone: string;
-    website: string;
-    company: Company;
-};
+export const User = v.object({
+    id: v.number(),
+    name: v.string(),
+    username: v.string(),
+    email: Email,
+    address: Address,
+    phone: v.string(),
+    website: v.string(),
+    company: Company,
+});
+
+export type User = v.InferInput<typeof User>;

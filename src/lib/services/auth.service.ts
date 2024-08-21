@@ -1,13 +1,12 @@
-import { computed, Injectable, signal } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { computed, Injectable, signal } from '@angular/core';
 
 @Injectable({
-    providedIn: "root",
+    providedIn: 'root',
 })
 export class AuthService {
     private user = new Map([
-        ["admin", "1234"],
-        ["test", "test"],
+        ['admin', '1234'],
+        ['test', 'test'],
     ]);
     private _loggedIn = signal<boolean>(false);
     loggedIn = computed(() => this._loggedIn());

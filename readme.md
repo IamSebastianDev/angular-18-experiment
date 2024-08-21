@@ -28,3 +28,5 @@ To test locally, clone the repository, install the dependencies using `bun insta
 ## Reasoning
 
 Angular has recently made strides to change the way an Angular application is structured. Several previous Injectables have been converted to functional (e.g., Guards, Interceptors) along with Standalone Components, Pipes, and Directives. All these changes enable the creation of a truly module-less Angular application.
+
+## Styleguide Propositions
